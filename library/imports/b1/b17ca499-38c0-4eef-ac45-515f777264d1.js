@@ -10,15 +10,24 @@ cc.Class({
     jumpHeight: 0,
     jumpDuration: 0,
     maxMoveSpeed: 0,
-    accel: 0
+    accel: 0,
+    jumpAudio: {
+      "default": null,
+      type: cc.AudioClip,
+      displayName: "跳跃声音"
+    }
   },
   setJumpAction: function setJumpAction() {
     // 跳跃上升
     var jumpUp = cc.moveBy(this.jumpDuration, cc.v2(0, this.jumpHeight)).easing(cc.easeCubicActionOut()); // 下落
 
-    var jumpDown = cc.moveBy(this.jumpDuration, cc.v2(0, -this.jumpHeight)).easing(cc.easeCubicActionIn()); // 不断重复
+    var jumpDown = cc.moveBy(this.jumpDuration, cc.v2(0, -this.jumpHeight)).easing(cc.easeCubicActionIn());
+    var callback = cc.callFunc(this.playJumpSound, this); // 不断重复
 
-    return cc.repeatForever(cc.sequence(jumpUp, jumpDown));
+    return cc.repeatForever(cc.sequence(jumpUp, jumpDown, callback));
+  },
+  playJumpSound: function playJumpSound() {
+    cc.audioEngine.playEffect(this.jumpAudio, false);
   },
   onKeyDown: function onKeyDown(event) {
     // set a flag when key pressed

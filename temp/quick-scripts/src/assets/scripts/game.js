@@ -32,6 +32,10 @@ cc.Class((_cc$Class = {
     scoreDisplay: {
       "default": null,
       type: cc.Label
+    },
+    scoreAudio: {
+      "default": null,
+      type: cc.AudioClip
     }
   },
   update: function update(dt) {
@@ -48,7 +52,8 @@ cc.Class((_cc$Class = {
     this.spawnNewStar();
   },
   gainScore: function gainScore() {
-    this.score += 1; // 更新 scoreDisplay Label 的文字
+    this.score += 1;
+    cc.audioEngine.playEffect(this.scoreAudio, false); // 更新 scoreDisplay Label 的文字
 
     this.scoreDisplay.string = 'Score: ' + this.score;
   },
