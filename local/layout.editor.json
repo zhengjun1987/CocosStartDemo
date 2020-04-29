@@ -1,0 +1,97 @@
+{
+  "version": "1.1.1",
+  "windows": {
+    "main": {
+      "main": true,
+      "url": "app://editor/index.html",
+      "windowType": "dockable",
+      "x": 1280,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "layout": {
+        "children": [
+          {
+            "children": [
+              {
+                "active": 0,
+                "children": [
+                  "hierarchy"
+                ],
+                "height": 505.75,
+                "type": "panel",
+                "width": 407
+              },
+              {
+                "active": 0,
+                "children": [
+                  "assets"
+                ],
+                "height": 509.75,
+                "type": "panel",
+                "width": 407
+              }
+            ],
+            "height": 1018.5,
+            "type": "dock-v",
+            "width": 407
+          },
+          {
+            "children": [
+              {
+                "active": 0,
+                "children": [
+                  "scene"
+                ],
+                "height": 749.359375,
+                "type": "panel",
+                "width": 929
+              },
+              {
+                "active": 0,
+                "children": [
+                  "console",
+                  "timeline",
+                  "game-window"
+                ],
+                "height": 266.125,
+                "type": "panel",
+                "width": 929
+              }
+            ],
+            "height": 1018.5,
+            "type": "dock-v",
+            "width": 929
+          },
+          {
+            "active": 0,
+            "children": [
+              "inspector",
+              "cocos-services"
+            ],
+            "height": 1018.5,
+            "type": "panel",
+            "width": 578
+          }
+        ],
+        "type": "dock-h"
+      },
+      "panels": [
+        "hierarchy",
+        "assets",
+        "scene",
+        "console",
+        "timeline",
+        "game-window",
+        "inspector",
+        "cocos-services"
+      ]
+    },
+    "worker": {}
+  },
+  "panels": {},
+  "panelLabelWidth": {
+    "inspector": null
+  },
+  "panelLabelWidth.inspector": null
+}
